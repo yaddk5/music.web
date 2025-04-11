@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Albums</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        header img {
+            width: 350px;
+            height: auto;
+            
+        }
+
+        header img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+    
+        .section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+        .section h2 {
+            text-align: center;
+        }
+        .album {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            gap: 70px;
+            padding: 20px 0;
+        }
+        .album-card {
+            text-align: center;
+            width: 150px;
+        }
+        .album-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+        .album-card img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .album-card p {
+            margin: 5px 0;
+        }
+
+        .now-playing-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.vinyl-spinning {
+  width: 100px;
+  height: 100px;
+  animation: spin 6s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.song-info {
+  max-width: 300px;
+}
+
+.song-info h3 {
+  margin-bottom: 10px;
+}
+
+/* 🔥 Fake Progress Bar */
+.progress-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 10px;
+}
+
+.progress {
+  width: 60%;
+  height: 100%;
+  background-color: #250504;
+  animation: fillBar 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes fillBar {
+  0% { width: 20%; }
+  100% { width: 80%; }
+}
+
+.music-bars {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.bar {
+  width: 4px;
+  height: 20px;
+  background-color: #000;
+  animation: bounce 0.8s infinite ease-in-out;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.bar:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    height: 10px;
+  }
+  50% {
+    height: 30px;
+  }
+}
+
+.now-playing {
+  padding: 40px 20px;
+  background-color: white /* light gray, soft contrast (added) */
+  border-top: 1px solid #ccc; /* (added) */
+  border-bottom: 1px solid #ccc; /* (added) */
+}
+
+/* 🔥 Now Playing Container - Wider gap */
+.now-playing-container {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* wider gap between vinyl and text (added) */
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 🔥 Larger spinning vinyl */
+.vinyl-spinning {
+  width: 150px; /* made larger (added) */
+  height: 150px; /* made larger (added) */
+  animation: spin 6s linear infinite;
+  border-radius: 50%;
+}
+
+/* 🔥 Song Info - larger text size */
+.song-info {
+  max-width: 400px;
+  font-size: 1.1rem;
+}
+
+/* 🔥 Heading in Song Info - larger font */
+.song-info h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem; /* made larger (added) */
+}
+
+/* 🎨 Accent Color (light blue) for Progress Bar and Bars */
+:root {
+  --accent-blue: #035674; /* light blue (added) */
+}
+
+/* 🔥 Progress Bar */
+.progress {
+  background-color: var(--accent-blue); /* light blue (added) */
+}
+
+/* 🔥 Animated Music Bars */
+.bar {
+  background-color: var(--accent-blue); /* light blue (added) */
+}
+
+/* 🔥 Album hover effect with light blue */
+.album-card img:hover {
+  border: 2px solid var(--accent-blue); /* light blue border on hover (added) */
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Cassette Tapes — julien roubinet.jpeg" alt="Vinyl Records">
+        <h1>My Music Collection</h1>
+    </header>
+
+    <section class="section now-playing">
+        <div class="now-playing-container">
+          <img src="wave.jpeg" alt="Spinning Vinyl" class="vinyl-spinning">
+          
+          <div class="song-info">
+            <h3>🎶 Now Playing</h3>
+            <p><strong>Love.</strong></p>
+            <p><strong>Wave To Earth</strong></p>
+
+            <div class="music-bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+
+
+          </div>
+        </div>
+      </section>
+
+
+
+    <section class="section" id="favorites">
+        <h2>Favorite Albums</h2>
+        <div class="album">
+            <div class="album-card">
+                <img src="Radiohead - OK Computer.jpeg" alt="Album 1">
+                <p>Title <strong>OK Computer (1997)</strong></p>
+                <p>Artist <strong>Radiohead</strong></p>
+                <p>Favorite Track <strong>Let Down</strong></p>
+            </div>
+            <div class="album-card">
+                <img src="Young Man.jpeg" alt="Album 3">    
+                <p>Title <strong>AAA (2024)</strong></p>
+                <p>Artist <strong>HYUKOH</strong></p>
+                <p>Favorite Track <strong>Y</strong></p>
+            </div>
+            <div class="album-card">
+                <img src="Album Review_ Our Top 5 Tracks on 'The New Abnormal' by The Strokes - Pursuit Of Dopeness.jpeg" alt="Album 4">
+                <p>Title <strong>The New Abnormal (2020)</strong></p>
+                <p>Artist <strong>The Strokes</strong></p>
+                <p>Favorite Track <strong>Ode To The Mets</strong></p>
+            </div>
+        </div>
+
+        
+  
+
+    </section>
+
+    <section class="section" id="highly-rated">
+        <h2>Highly Rated Albums</h2>
+        <div class="album">
+            
+            <div class="album-card">
+                <img src="poles.jpeg" alt="Album 2">
+                <p>Title <strong>The High Tide Club (2022)</strong></p>
+                <p>Artist<strong> The Poles</strong></p>
+                <p>Favorite Track<strong> Sun Shower</strong></p>
+            </div>
+            
+            <div class="album-card">
+                <img src="Chet Baker - Chet Baker Sings.jpeg" alt="Album 6">
+                <p>Title <strong>Chet Baker Sings (1956)</strong></p>
+                <p>Artist <strong>Chet Baker</strong></p>
+                <p>Favorite Track <strong>I Fall In Love Too Easily</strong></p>
+            </div>
+            <div class="album-card">
+                <img src="fleet.jpeg" alt="Album 5">
+                <p>Title <strong>Fleet Foxes (2008)</strong></p>
+                <p>Artist <strong>Fleet Foxes</strong></p>
+                <p>Favorite Track <strong>Your Protector</strong></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
