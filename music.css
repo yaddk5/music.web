@@ -190,26 +190,24 @@ font-size: 1.5rem; /* made larger */
 background-color: var(--accent-blue); /* light blue */
 }
 
-/* Animated Music Bars */
 .bar {
 background-color: var(--accent-blue); /* light blue */
 }
 
-/*Album hover effect with light blue */
 .album-card img:hover {
 border: 2px solid var(--accent-blue); /* light blue border on hover */
 }
 
-
 .album {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  gap: 20px;             /* add space between album*/
+  flex-wrap: wrap;      
+  justify-content: center;
 }
 
+
 .album-row {
-    display: flex; /* Aligns the albums in two rows three top three bottom */ 
+    display: flex;  
     flex-direction: row; /* Aligns the albums in a row */
     flex-wrap: wrap; 
     justify-content:right; /* Aligns the albums to the right */
@@ -217,15 +215,27 @@ border: 2px solid var(--accent-blue); /* light blue border on hover */
     margin-bottom: 20px;
 }
 
+.album-card a {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+}
+
+.album-card a img {
+  width: 100%;
+  height: auto;
+  display: flex;
+  border-radius: 8px;
+}
+
 .star img {
-    width: 300px; /* makes the star smaller */
+    width: 300px; /* make the star smaller */
     height: auto;
-    display: block;
+    display: inline;
     margin: 0 auto 10px auto;
     align-content: end;
 }
 
-/* Playlist Section */
 #playlists h2 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -286,6 +296,35 @@ border: 2px solid var(--accent-blue); /* light blue border on hover */
     border-radius: 5px;
     object-fit: cover;
   }
-  
+
+  .playlist-link {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    color: var(--accent-blue); /* Using the light blue accent color */
+    text-decoration: none;
+}
+
+.playlist-link:hover {
+    text-decoration: underline;
+}
+
+.next-song p{
+  display: block;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    color: var(--accent-blue); /* Use the light blue accent color */
+    text-decoration: none;
+
+}
+  iframe {
+  width="250" 
+  height="80" 
+  frameborder="0" 
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+  loading="lazy">
+  }
 
 </style>
